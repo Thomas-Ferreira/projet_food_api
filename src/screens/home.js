@@ -6,7 +6,9 @@ import { Link } from "react-router-dom";
 
 const home = () => {
   const dispatch = useDispatch();
-  const apiResponce = useSelector((state) => state.api.response);
+  const apiResponce = useSelector((state) =>
+    state.api?.response?.data?.recipes ? state.api?.response?.data?.recipes : []
+  );
   const apiError = useSelector((state) => state.api.error);
 
   useEffect(() => {
@@ -19,6 +21,9 @@ const home = () => {
       <Link to="/search"> Search </Link>
       <Link to="/recette"> Recette </Link>
       <Link to="/login"> Login </Link>
+      {apiResponce.map((item) => (
+        <div>{item.title}</div>
+      ))}
     </div>
   );
 };
