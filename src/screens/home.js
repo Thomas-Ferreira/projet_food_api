@@ -9,6 +9,10 @@ const home = () => {
         <div className="App">
              <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Link to="/search"> Search </Link>
+        <Link to="/recette"> Recette </Link>
+        <Link to="/login"> Login </Link>
+        
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
