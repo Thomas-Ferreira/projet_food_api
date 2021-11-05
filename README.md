@@ -4,8 +4,10 @@
  
  Fonctionalités :
  
-  -Page Home : recettes random
+  -Page Home : propose une recette aléatoire
   
-  -Page recherche : rechercher une recette en fonction de nos ingredients
+  -Page recherche : rechercher une recette en fonction de nos ingredient
+  
+  -Page recette : consulte la recette
   
   -Login: revoie vers notre profils avec nos recettes réalisées
