@@ -11,7 +11,7 @@ const home = () => {
 
   useEffect(() => {
     dispatch(allTheActions.api.getRandom());
-    console.log(apiResponce);
+    console.log({ apiResponce });
   }, []);
 
   return (
@@ -19,6 +19,18 @@ const home = () => {
       <Link to="/search"> Search </Link>
       <Link to="/recette"> Recette </Link>
       <Link to="/login"> Login </Link>
+      {apiResponce ? (
+        apiResponce?.data.map((item, index) => (
+          <div key={index}>
+            <img src={item?.image} alt={item?.name} />
+            <div>{item?.name}</div>
+          </div>
+        ))
+      ) : apiError ? (
+        <div>error</div>
+      ) : (
+        <div>loading</div>
+      )}
     </div>
   );
 };
