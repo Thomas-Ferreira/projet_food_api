@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -7,6 +7,6 @@ const GlobalStyle = createGlobalStyle`
     background: greenyellow;
     font-family: Open-Sans, Helvetica, Sans-Serif;
   }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle

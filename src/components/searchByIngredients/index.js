@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import allTheActions from '../../actions'
 
-const SerachByIngredients = () => {
+const SearchByIngredients = () => {
   const [ingredient, setIngredient] = useState('')
   const [ingredientsList, setIngredientsList] = useState('')
   const dispatch = useDispatch()
@@ -79,4 +79,4 @@ const StyledButton = styled.button`
   outline: none;
 `
 
-export default SerachByIngredients
+export default SearchByIngredients
