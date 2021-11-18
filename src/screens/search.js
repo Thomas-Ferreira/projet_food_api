@@ -7,13 +7,12 @@ import SearchByIngredients from '../components/searchByIngredients'
 import { useState } from 'react'
 
 const Search = () => {
-  const [isSearch, setSearch] = useState('')
+  const [isSearch, setSearch] = useState(true)
 
   const isSearchName = () => {
     setSearch(true)
     console.log(isSearch)
   }
-
   const isSearchIngredient = () => {
     setSearch(false)
     console.log(isSearch)
@@ -25,6 +24,11 @@ const Search = () => {
       <StyledButton onClick={isSearchIngredient}>
         Search by ingredient
       </StyledButton>
+      {isSearch ? (
+        <SearchByName></SearchByName>
+      ) : (
+        <SearchByIngredients></SearchByIngredients>
+      )}
     </div>
   )
 }

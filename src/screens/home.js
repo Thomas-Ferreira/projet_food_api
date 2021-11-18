@@ -28,7 +28,7 @@ const Home = () => {
         {/*apiResponce.map(item => (
           <div>
             {item.title}
-            <img href={item.image}></img>
+            <img src={item.image}></img>
           </div>
         ))*/}
       </div>

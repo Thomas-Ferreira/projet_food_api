@@ -27,20 +27,20 @@ const SearchByName = () => {
       <Link to='/login'> Login </Link>
 
       <FormContainer>
-        <StyledForm onSubmit={onSubmit}>
-          <StyledInput
+        <form onSubmit={onSubmit}>
+          <input
             value={recette}
             onChange={e => setRecette(e.target.value)}
             name='recette'
             type='text'
-          ></StyledInput>
-          <StyledInput type='submit'></StyledInput>
-        </StyledForm>
+          ></input>
+          <input type='submit'></input>
+        </form>
       </FormContainer>
       {apiRecette.map(item => (
         <div>
-          {item.title}
-          {item.id}
+          <h2>{item.title}</h2>
+          <img src={item.image}></img>
         </div>
       ))}
     </div>
@@ -50,18 +50,6 @@ const SearchByName = () => {
 const FormContainer = styled.div`
   margin-top: 10%;
   padding: 12px;
-`
-
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-`
-
-const StyledInput = styled.input`
-  height: 30px;
-  margin-bottom: 12px;
-  border-radius: 4px;
-  outline: none;
 `
 
 export default SearchByName
