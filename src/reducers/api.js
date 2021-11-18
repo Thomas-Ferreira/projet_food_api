@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { API_SUCCESS, API_ERROR } from '../actions/api'
 
 const initialState = {}
