@@ -14,10 +14,10 @@ const Home = () => {
   )
   const apiError = useSelector(state => state.api.error)
 
-  useEffect(() => {
+  /*useEffect(() => {
     dispatch(allTheActions.api.getRandom())
     console.log({ apiResponce })
-  }, [])
+  }, [])*/
 
   return (
     <Homemenu>
