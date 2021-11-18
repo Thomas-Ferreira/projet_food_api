@@ -7,10 +7,16 @@ import allTheActions from '../../actions'
 const SearchByIngredients = () => {
   const [ingredient, setIngredient] = useState('')
   const [ingredientsList, setIngredientsList] = useState([])
+  const [param, setParam] = useState('')
   const dispatch = useDispatch()
 
   const addIngredient = () => {
-    setIngredientsList([...ingredientsList, {label:ingredient}])
+    setIngredientsList([...ingredientsList, { label: ingredient }])
+    if (param === '') {
+      setParam(`${ingredient}`)
+    } else {
+      setParam(`${param},+${ingredient}`)
+    }
     setIngredient('') //LA TABLEAU
   }
 
@@ -24,8 +30,9 @@ const SearchByIngredients = () => {
 
   const onSubmit = e => {
     e.preventDefault()
-    dispatch(allTheActions.api.getRecetteByIngredients(ingredientsList))
+    dispatch(allTheActions.api.getRecetteByIngredients(param))
     console.log({ apiRecettes })
+    setParam('')
   }
 
   return (
@@ -48,8 +55,11 @@ const SearchByIngredients = () => {
             <button onClick={item.spoonacularSourceUrl}>voir la recette</button>
           </div>
         ))}
-      </div> {/*AFFICHAGE TABLEAU*/}
-      {ingredientsList.map(ingredient => <p>{ingredient.label}</p>)} 
+      </div>{' '}
+      {/*AFFICHAGE TABLEAU*/}
+      {ingredientsList.map(ingredient => (
+        <p>{ingredient.label}</p>
+      ))}
     </div>
   )
 }

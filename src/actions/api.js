@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { useState } from 'react'
 
 export const API_SUCCESS = 'API_SUCCESS'
 export const API_ERROR = 'API_ERROR'
@@ -42,6 +43,7 @@ export const getRecette = params => dispatch => {
 }
 
 export const getRecetteByIngredients = params => dispatch => {
+  console.log(params)
   axios({
     method: 'GET',
     url: `https://api.spoonacular.com/recipes/findByIngredients`,
