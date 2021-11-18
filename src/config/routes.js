@@ -13,9 +13,12 @@ import Search from '../screens/search'
 import Recette from '../screens/recette'
 import Login from '../screens/login'
 
+import GlobalStyle from './globalstyle'
+
 const Routes = () => {
   return (
     <div>
+      <GlobalStyle/>
       <Router>
         <Switch>
           <Route exact path='/'>
