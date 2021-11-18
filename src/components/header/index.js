@@ -12,6 +12,7 @@ const header = () => {
 
 export default header;
 
-const DivHeader = styled.div`
+const DivHeader = styled.header`
 margin-top: 0;
+background-color: green;
 `

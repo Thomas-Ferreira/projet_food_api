@@ -51,7 +51,7 @@ const LoginForm = props => {
 }
 
 const FormContainer = styled.div`
-  margin-top: 10%;
+  margin-top: 5%;
   padding: 12px;
 `
 
