@@ -34,20 +34,21 @@ const SearchByIngredients = () => {
   return (
     <div>
       <FormContainer>
-        <StyledInput
+        <input
           value={ingredient}
           onChange={e => setIngredient(e.target.value)}
-        ></StyledInput>
-        <StyledButton onClick={addIngredient}>add to list</StyledButton>
-        <StyledForm onSubmit={onSubmit}>
-          <StyledInput type='submit'></StyledInput>
-        </StyledForm>
+        ></input>
+        <button onClick={addIngredient}>add to list</button>
+        <form onSubmit={onSubmit}>
+          <input type='submit'></input>
+        </form>
       </FormContainer>
       <div>
         {apiRecettes.map(item => (
           <div>
-            {item.title}
-            {item.id}
+            <h2>{item.title}</h2>
+            <img src={item.image}></img>
+            <button onClick={item.spoonacularSourceUrl}>voir la recette</button>
           </div>
         ))}
       </div>
@@ -58,25 +59,6 @@ const SearchByIngredients = () => {
 const FormContainer = styled.div`
   margin-top: auto;
   padding: 12px;
-`
-
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-`
-
-const StyledInput = styled.input`
-  height: 30px;
-  margin-bottom: 12px;
-  border-radius: 4px;
-  outline: none;
-`
-
-const StyledButton = styled.button`
-  height: 30px;
-  margin-bottom: 12px;
-  border-radius: 4px;
-  outline: none;
 `
 
 export default SearchByIngredients

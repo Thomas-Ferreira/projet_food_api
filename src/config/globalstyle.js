@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -6,6 +7,22 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background: greenyellow;
     font-family: Open-Sans, Helvetica, Sans-Serif;
+  }
+  button{
+    height: 30px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    outline: none;
+  }
+  input{
+    height: 30px;
+    margin-bottom: 12px;
+    border-radius: 4px;
+    outline: none;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
   }
 `
 
