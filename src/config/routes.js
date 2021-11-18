@@ -14,12 +14,14 @@ import Recette from '../screens/recette'
 import Login from '../screens/login'
 
 import GlobalStyle from './globalstyle'
+import Header from '../components/header'
 
 const Routes = () => {
   return (
     <div>
       <GlobalStyle/>
       <Router>
+        <Header/>
         <Switch>
           <Route exact path='/'>
             <Home></Home>

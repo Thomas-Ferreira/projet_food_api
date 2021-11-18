@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
-import SideBar from '../components/sidebar/sidebar'
 import './styled.css'
 
 import allTheActions from '../actions'
@@ -22,7 +21,7 @@ const Home = () => {
   return (
     <Homemenu>
       <div>
-        <SideBar pageWrapId={'page-wrap'} outerContainerId={'App'} />
+        <p>Welcome Home</p>
         <Link to='/search'> Search </Link>
         <Link to='/recette'> Recette </Link>
         <Link to='/login'> Login </Link>
@@ -41,4 +40,5 @@ export default Home
 
 const Homemenu = styled.div`
   background-color: greenyellow;
+  text-align: center;
 `

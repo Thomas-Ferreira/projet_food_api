@@ -15,6 +15,7 @@ const LoginForm = () => {
 };
 
 const FormContainer = styled.div`
+  margin-top: 10%;
   padding: 12px;
 `;
 

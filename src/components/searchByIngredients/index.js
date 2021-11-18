@@ -56,6 +56,7 @@ const SerachByIngredients = () => {
 }
 
 const FormContainer = styled.div`
+  margin-top: auto;
   padding: 12px;
 `
 
