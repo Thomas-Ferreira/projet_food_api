@@ -6,15 +6,12 @@ import allTheActions from '../../actions'
 
 const SearchByIngredients = () => {
   const [ingredient, setIngredient] = useState('')
-  const [ingredientsList, setIngredientsList] = useState('')
+  const [ingredientsList, setIngredientsList] = useState([])
   const dispatch = useDispatch()
 
   const addIngredient = () => {
-    if (ingredientsList === '') {
-      setIngredientsList(`${ingredient}`)
-    } else {
-      setIngredientsList(`${ingredientsList},+${ingredient}`)
-    }
+    setIngredientsList([...ingredientsList, {label:ingredient}])
+    setIngredient('') //LA TABLEAU
   }
 
   const apiRecettes = useSelector(state =>
@@ -51,7 +48,8 @@ const SearchByIngredients = () => {
             <button onClick={item.spoonacularSourceUrl}>voir la recette</button>
           </div>
         ))}
-      </div>
+      </div> {/*AFFICHAGE TABLEAU*/}
+      {ingredientsList.map(ingredient => <p>{ingredient.label}</p>)} 
     </div>
   )
 }
