@@ -3,37 +3,37 @@ import {
   Switch,
   Route,
   Redirect,
-  Link,
-} from "react-router-dom";
+  Link
+} from 'react-router-dom'
 
-import React from "react";
+import React from 'react'
 
-import Home from "../screens/home";
-import Search from "../screens/search";
-import Recette from "../screens/recette";
-import Login from "../screens/login";
+import Home from '../screens/home'
+import Search from '../screens/search'
+import Recette from '../screens/recette'
+import Login from '../screens/login'
 
 const Routes = () => {
   return (
     <div>
       <Router>
         <Switch>
-          <Route exact path="/">
+          <Route exact path='/'>
             <Home></Home>
           </Route>
-          <Route path="/search">
+          <Route path='/search'>
             <Search></Search>
           </Route>
-          <Route path="/recette">
+          <Route path='/recette'>
             <Recette></Recette>
           </Route>
-          <Route path="/login">
+          <Route path='/login'>
             <Login></Login>
           </Route>
         </Switch>
       </Router>
     </div>
-  );
-};
+  )
+}
 
-export default Routes;
+export default Routes

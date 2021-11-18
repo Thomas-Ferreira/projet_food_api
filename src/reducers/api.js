@@ -1,20 +1,20 @@
-import { API_SUCCESS, API_ERROR } from "../actions/api";
+import { API_SUCCESS, API_ERROR } from '../actions/api'
 
-const initialState = {};
+const initialState = {}
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case API_SUCCESS:
       return {
         ...state,
-        response: { ...action.response },
-      };
+        response: { ...action.response }
+      }
     case API_ERROR:
       return {
         ...state,
-        error: { ...action.error },
-      };
+        error: { ...action.error }
+      }
     default:
-      return state;
+      return state
   }
-};
+}
