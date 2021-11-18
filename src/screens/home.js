@@ -26,12 +26,12 @@ const Home = () => {
         <Link to='/search'> Search </Link>
         <Link to='/recette'> Recette </Link>
         <Link to='/login'> Login </Link>
-        {apiResponce.map(item => (
+        {/*apiResponce.map(item => (
           <div>
             {item.title}
             <img href={item.image}></img>
           </div>
-        ))}
+        ))*/}
       </div>
     </Homemenu>
   )
