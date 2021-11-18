@@ -19,9 +19,9 @@ import Header from '../components/header'
 const Routes = () => {
   return (
     <div>
-      <GlobalStyle/>
+      <GlobalStyle />
       <Router>
-        <Header/>
+        <Header />
         <Switch>
           <Route exact path='/'>
             <Home></Home>

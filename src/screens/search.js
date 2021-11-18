@@ -6,17 +6,17 @@ import './styled.css'
 import SearchByIngredients from '../components/searchByIngredients'
 import { useState } from 'react'
 
-const search = () => {
-  const [test, setTest] = useState(false)
+const Search = () => {
+  const [isSearch, setSearch] = useState('')
 
   const isSearchName = () => {
-    setTest(true)
-    console.log(test)
-    return <SearchByName></SearchByName>
+    setSearch(true)
+    console.log(isSearch)
   }
 
   const isSearchIngredient = () => {
-    return <SearchByIngredients></SearchByIngredients>
+    setSearch(false)
+    console.log(isSearch)
   }
 
   return (
@@ -36,4 +36,4 @@ const StyledButton = styled.button`
   outline: none;
 `
 
-export default search
+export default Search
