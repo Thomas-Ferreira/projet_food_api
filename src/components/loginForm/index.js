@@ -47,20 +47,20 @@ const LoginForm = props => {
 const FormContainer = styled.div`
   margin-top: 10%;
   padding: 12px;
-`;
+`
 
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-`;
+`
 
 const StyledInput = styled.input`
   height: 30px;
   margin-bottom: 12px;
   border-radius: 4px;
   outline: none;
-`;
+`
 
-LoginForm.propTypes = {};
+LoginForm.propTypes = {}
 
-export default LoginForm;
+export default LoginForm
