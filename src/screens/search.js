@@ -20,10 +20,8 @@ const Search = () => {
 
   return (
     <div>
-      <StyledButton onClick={isSearchName}>Search by name</StyledButton>
-      <StyledButton onClick={isSearchIngredient}>
-        Search by ingredient
-      </StyledButton>
+      <button onClick={isSearchName}>Search by name</button>
+      <button onClick={isSearchIngredient}>Search by ingredient</button>
       {isSearch ? (
         <SearchByName></SearchByName>
       ) : (
@@ -32,12 +30,5 @@ const Search = () => {
     </div>
   )
 }
-
-const StyledButton = styled.button`
-  height: 30px;
-  margin-bottom: 12px;
-  border-radius: 4px;
-  outline: none;
-`
 
 export default Search

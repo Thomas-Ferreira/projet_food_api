@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 export const API_SUCCESS = 'API_SUCCESS'
 export const API_ERROR = 'API_ERROR'
+export const API_SUCCESS_SEARCH = 'API_SUCCESS_SEARCH'
 
 // Thunk function
 export const getRandom = () => dispatch => {
@@ -10,7 +11,7 @@ export const getRandom = () => dispatch => {
     method: 'GET',
     url: `https://api.spoonacular.com/recipes/random`,
     params: {
-      apiKey: 'c275f175c9fd48669b66b8d29fd368ed',
+      apiKey: '62bfcedd460e49c787df6ec46585ec7b',
       number: 1
     }
   })
@@ -28,7 +29,7 @@ export const getRecette = params => dispatch => {
     method: 'GET',
     url: `https://api.spoonacular.com/recipes/complexSearch`,
     params: {
-      apiKey: 'c275f175c9fd48669b66b8d29fd368ed',
+      apiKey: '62bfcedd460e49c787df6ec46585ec7b',
       query: params,
       number: 10
     }
@@ -48,14 +49,14 @@ export const getRecetteByIngredients = params => dispatch => {
     method: 'GET',
     url: `https://api.spoonacular.com/recipes/findByIngredients`,
     params: {
-      apiKey: 'c275f175c9fd48669b66b8d29fd368ed',
+      apiKey: '62bfcedd460e49c787df6ec46585ec7b',
       ingredients: params,
       number: 10
     }
   })
     .then(response => {
       console.log(response)
-      dispatch({ type: API_SUCCESS, response: response })
+      dispatch({ type: API_SUCCESS_SEARCH, response: response })
     })
     .catch(error => {
       dispatch({ type: API_ERROR, error: error })

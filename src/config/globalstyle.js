@@ -21,10 +21,16 @@ p{
 
 button{
   height: 30px;
-  margin-bottom: 12px;
+  color: #FFFFFF;
+  background: green;
+  border-color: #FFFFFF;
+  align:right;
+  border-style: solid;border-width: 1px 1px 1px 1px;
+  padding: 11px 30px 11px 30px;
   border-radius: 4px;
   outline: none;
 }
+
 input{
   height: 30px;
   margin-bottom: 12px;
