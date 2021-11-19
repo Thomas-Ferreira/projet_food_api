@@ -15,35 +15,38 @@ const Home = () => {
   )
   const apiError = useSelector(state => state.api.error)
 
-  /*useEffect(() => {
+  useEffect(() => {
     dispatch(allTheActions.api.getRandom())
     console.log({ apiResponce })
-  }, [])*/
+  }, [])
 
   return (
     <Homemenu>
       <div>
       <Header>
         <h1>Welcome Home</h1>
-        {/*apiResponce.map(item => (
-          <div>
-            <h2> Recette du jour : </h2>
-            {item.title}
 
-            <Image src={item.image}></Image
-          </div>
-        ))*/}
       </Header>
       <Body>
-      <LeftBody>
-      <TextBody className="text-wrapper">
-        <h1>Nom Recette du Jour</h1> {/*Call recette*/}
-        <LoremIpsum p={2} />
-      </TextBody>
-      </LeftBody>
-      <RightBody>
-        <img src="../logo-simple-framed-green-gradient.ico"></img>
-      </RightBody>
+        <LeftBody>
+          <TextBody className="text-wrapper">
+            {apiResponce.map(item => (
+              <div>
+                <h2> Recette du jour : </h2>
+                <h2>{item.title}</h2>
+              </div>
+            ))}
+            <LoremIpsum p={2} />
+          </TextBody>
+        </LeftBody>
+      
+        <RightBody>
+        {apiResponce.map(item => (
+          <div>
+            <img src={item.image}></img>
+          </div>
+        ))}
+        </RightBody>
       </Body>
       </div>
     </Homemenu>
