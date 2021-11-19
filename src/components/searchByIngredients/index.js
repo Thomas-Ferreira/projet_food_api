@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import allTheActions from '../../actions'
 
@@ -26,6 +25,7 @@ const SearchByIngredients = () => {
   const apiError = useSelector(state => state.api.error)
   useEffect(() => {
     console.log(ingredientsList)
+    dispatch(allTheActions.api.getRecetteByIngredients([]))
   }, [ingredientsList])
 
   const onSubmit = e => {
@@ -33,6 +33,18 @@ const SearchByIngredients = () => {
     dispatch(allTheActions.api.getRecetteByIngredients(param))
     console.log({ apiRecettes })
     setParam('')
+  }
+
+  const display = apiResponse => {
+    if (apiResponse !== '') {
+      return apiResponse.map(item => (
+        <div>
+          <h2>{item.title}</h2>
+          <img src={item.image}></img>
+          <button onClick={item.spoonacularSourceUrl}>voir la recette</button>
+        </div>
+      ))
+    }
   }
 
   return (
@@ -47,19 +59,11 @@ const SearchByIngredients = () => {
           <input type='submit'></input>
         </form>
       </FormContainer>
-      <div>
-        {apiRecettes.map(item => (
-          <div>
-            <h2>{item.title}</h2>
-            <img src={item.image}></img>
-            <button onClick={item.spoonacularSourceUrl}>voir la recette</button>
-          </div>
-        ))}
-      </div>{' '}
-      {/*AFFICHAGE TABLEAU*/}
+      <h2>Vos ingrédients</h2>
       {ingredientsList.map(ingredient => (
-        <p>{ingredient.label}</p>
+        <li>{ingredient.label}</li>
       ))}
+      <div>{display(apiRecettes)}</div>
     </div>
   )
 }
