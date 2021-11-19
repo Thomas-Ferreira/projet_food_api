@@ -15,4 +15,6 @@ export default header;
 const DivHeader = styled.header`
 margin-top: 0;
 background-color: green;
+text-color: black;
+text-decoration: none;
 `

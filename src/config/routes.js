@@ -1,9 +1,7 @@
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Redirect,
-  Link
+  Route
 } from 'react-router-dom'
 
 import Home from '../screens/home'
@@ -28,8 +26,6 @@ const Routes = () => {
       <GlobalStyle />
       <Router>
         <Header />
-        <button onClick={() =>switchTheme(lightTheme)}> light Theme</button>
-        <button onClick={() =>switchTheme(darkTheme)}> dark Theme</button>
         <Switch>
           <Route exact path='/'>
             <Home></Home>
