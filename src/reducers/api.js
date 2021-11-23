@@ -14,7 +14,7 @@ export default (state = initialState, action) => {
     case API_SUCCESS_SEARCH:
       return {
         ...state,
-        response: { ...action.response }
+        response: { ...action?.data }
       }
     case API_ERROR:
       return {

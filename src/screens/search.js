@@ -7,7 +7,7 @@ import SearchByIngredients from '../components/searchByIngredients'
 import { useState } from 'react'
 
 const Search = () => {
-  const [isSearch, setSearch] = useState(true)
+  const [isSearch, setSearch] = useState(false)
 
   const isSearchName = () => {
     setSearch(true)

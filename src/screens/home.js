@@ -22,13 +22,10 @@ const Home = () => {
   return (
     <Homemenu>
       <div>
-        <Header>
-          <h1>Welcome Home</h1>
-        </Header>
         <Body>
           <LeftBody>
             <TextBody className='text-wrapper'>
-              <h2>Projet Recette</h2>
+              <h1>Projet Recette</h1>
               <p>(titre temporaire)</p>
               <LoremIpsum p={1} />
             </TextBody>
@@ -36,9 +33,9 @@ const Home = () => {
           <RightBody>
             {apiResponce.map(item => (
               <div>
+                <Image src={item.image}></Image>
                 <h2> Recette du jour : </h2>
                 <h3>{item.title}</h3>
-                <Image src={item.image}></Image>
               </div>
             ))}
           </RightBody>
@@ -59,6 +56,7 @@ const Header = styled.div`
 
 const Body = styled.div`
   padding: 12px;
+  background: #ffffff;
   @media (min-width: 760px) {
     display: flex;
   }
@@ -69,10 +67,10 @@ const TextBody = styled.div`
 `
 
 const RightBody = styled.div`
-  background-color: green;
-  padding-right: 5%;
+  background-color: #4fc337;
   border-radius: 30px;
   text-align: center;
+  color: #ffffff;
   @media (min-width: 760px) {
     justify-content: flex-end;
     display: flex;
@@ -83,6 +81,7 @@ const RightBody = styled.div`
 
 const LeftBody = styled.div`
   padding-left: 12px;
+  justify-content: center;
   @media (min-width: 760px) {
     justify-content: flex-end;
     display: flex;
@@ -92,16 +91,15 @@ const LeftBody = styled.div`
 `
 
 const Homemenu = styled.div`
+  padding-top: 80px;
   background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
 `
 
 const Image = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 100%;
+  border-radius: 30px;
   @media (min-width: 760px) {
-    width: 200px;
-    height: 200px;
   }
 `

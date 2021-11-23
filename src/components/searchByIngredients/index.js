@@ -20,8 +20,9 @@ const SearchByIngredients = () => {
   }
 
   const apiRecettes = useSelector(state =>
-    state.api?.response?.data ? state.api?.response?.data : []
+    state.api.response ? state.api.response : []
   )
+  console.log(apiRecettes)
   const apiError = useSelector(state => state.api.error)
   useEffect(() => {
     console.log(ingredientsList)
@@ -33,18 +34,6 @@ const SearchByIngredients = () => {
     dispatch(allTheActions.api.getRecetteByIngredients(param))
     console.log({ apiRecettes })
     setParam('')
-  }
-
-  const display = apiResponse => {
-    if (apiResponse !== '') {
-      return apiResponse.map(item => (
-        <div>
-          <h2>{item.title}</h2>
-          <img src={item.image}></img>
-          <button onClick={item.spoonacularSourceUrl}>voir la recette</button>
-        </div>
-      ))
-    }
   }
 
   return (
@@ -63,7 +52,15 @@ const SearchByIngredients = () => {
       {ingredientsList.map(ingredient => (
         <li>{ingredient.label}</li>
       ))}
-      <div>{display(apiRecettes)}</div>
+      <div>
+        {apiRecettes.map(item => (
+          <div>
+            <h2>{item.title}</h2>
+            <img src={item.image}></img>
+            <button onClick={item.spoonacularSourceUrl}>voir la recette</button>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
