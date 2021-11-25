@@ -72,10 +72,21 @@ const RightBody = styled.div`
   text-align: center;
   color: #ffffff;
   @media (min-width: 760px) {
-    justify-content: flex-end;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -ms-flex-pack: end;
+    justify-content: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-flex: 1;
+    -ms-flex: 1;
     flex: 1;
     width: 50%;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
   }
 `
 

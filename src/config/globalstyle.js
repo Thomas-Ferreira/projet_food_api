@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { lightTheme, darkTheme } from './theme'
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -12,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
   font-style: normal;
 };
 body{
-  background-color: #ffffff;
+  background-color: white;
 }
 p{
   font-family: 'Roboto';
