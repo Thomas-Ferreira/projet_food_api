@@ -43,7 +43,7 @@ const SearchByIngredients = () => {
           value={ingredient}
           onChange={e => setIngredient(e.target.value)}
         ></input>
-        <button onClick={addIngredient}>add to list</button>
+        <button onClick={addIngredient}>Ajouter à la liste</button>
         <form onSubmit={onSubmit}>
           <input type='submit'></input>
         </form>
@@ -56,7 +56,7 @@ const SearchByIngredients = () => {
         <div>
           <h2>{item.title}</h2>
           <img src={item.image}></img>
-          <button onClick={item.spoonacularSourceUrl}>voir la recette</button>
+          <button onClick={item.spoonacularSourceUrl}>Voir la recette</button>
         </div>
       ))}
     </div>

@@ -25,9 +25,12 @@ const Home = () => {
         <Body>
           <LeftBody>
             <TextBody className='text-wrapper'>
-              <h1>Projet Recette</h1>
-              <p>(titre temporaire)</p>
-              <LoremIpsum p={1} />
+            {apiResponce.map(item => (
+              <div>
+              <h1>Description Recette</h1>
+              <div dangerouslySetInnerHTML={{__html: item.summary}} />
+              </div>
+              ))}
             </TextBody>
           </LeftBody>
           <RightBody>

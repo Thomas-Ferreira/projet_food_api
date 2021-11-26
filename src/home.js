@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <Homemenu>
       <div>
-        <p>Welcome Home</p>
+        <p>Bienvenu à l'Acceuil</p>
         {apiResponce.map(item => (
           <div>
             {item.title}

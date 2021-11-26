@@ -20,8 +20,8 @@ const Search = () => {
 
   return (
     <StyledDiv>
-      <button onClick={isSearchName}>Search by name</button>
-      <button onClick={isSearchIngredient}>Search by ingredient</button>
+      <button onClick={isSearchName}>Chercher par Nom</button>
+      <button onClick={isSearchIngredient}>Chercher par Ingredient</button>
       {isSearch ? (
         <SearchByName></SearchByName>
       ) : (

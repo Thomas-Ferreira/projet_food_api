@@ -13,11 +13,11 @@ export default props => {
     // Pass on our props
     <Menu {...props}>
       <Link className='menu-item' to='/'>
-        Home
+        Acceuil
       </Link>
       <p></p>
       <Link className='menu-item' to='/login'>
-        Login
+        Connexion
       </Link>
       <p></p>
       <Link className='menu-item' to='/recette'>
@@ -25,11 +25,11 @@ export default props => {
       </Link>
       <p></p>
       <Link className='menu-item' to='/search'>
-        Search
+        Recherche
       </Link>
       <p></p>
-      <button onClick={() =>switchTheme(lightTheme)}> light Theme</button>
-      <button onClick={() =>switchTheme(darkTheme)}> dark Theme</button>
+      <button onClick={() =>switchTheme(lightTheme)}> Theme Clair</button>
+      <button onClick={() =>switchTheme(darkTheme)}> Theme Sombre</button>
     </Menu>
   )
 }

@@ -8,7 +8,7 @@ const MapRecettes = props => {
         <div>
           <h2>{item.title}</h2>
           <img src={item.image}></img>
-          <button onClick={item.spoonacularSourceUrl}>voir la recette</button>
+          <button onClick={item.spoonacularSourceUrl}>Voir la recette</button>
         </div>
       ))}
     </div>

@@ -8,7 +8,7 @@ const header = () => {
       <navBar>
         <SideBar pageWrapId={'page-wrap'} outerContainerId={'App'} />
       </navBar>
-      <StyledH1>Welcome Home</StyledH1>
+      <StyledH1>Bienvenu à l'Acceuil</StyledH1>
     </DivHeader>
   )
 }
