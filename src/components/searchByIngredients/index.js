@@ -52,21 +52,19 @@ const SearchByIngredients = () => {
       {ingredientsList.map(ingredient => (
         <li>{ingredient.label}</li>
       ))}
-      <div>
-        {apiRecettes.map(item => (
-          <div>
-            <h2>{item.title}</h2>
-            <img src={item.image}></img>
-            <button onClick={item.spoonacularSourceUrl}>voir la recette</button>
-          </div>
-        ))}
-      </div>
+      {apiRecettes.map(item => (
+        <div>
+          <h2>{item.title}</h2>
+          <img src={item.image}></img>
+          <button onClick={item.spoonacularSourceUrl}>voir la recette</button>
+        </div>
+      ))}
     </div>
   )
 }
 
 const FormContainer = styled.div`
-  margin-top: auto;
+  margin-top: 20vh;
   padding: 12px;
 `
 

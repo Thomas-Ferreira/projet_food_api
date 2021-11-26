@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import allTheActions from '../../actions'
+import MapRecettes from '../mapRecettes'
 
 const SearchByName = () => {
   const [recette, setRecette] = useState('')
@@ -20,30 +21,23 @@ const SearchByName = () => {
   }
 
   return (
-    <div>
-      <FormContainer>
-        <form onSubmit={onSubmit}>
-          <input
-            value={recette}
-            onChange={e => setRecette(e.target.value)}
-            name='recette'
-            type='text'
-          ></input>
-          <input type='submit'></input>
-        </form>
-      </FormContainer>
-      {apiRecette.map(item => (
-        <div>
-          <h2>{item.title}</h2>
-          <img src={item.image}></img>
-        </div>
-      ))}
-    </div>
+    <FormContainer>
+      <form onSubmit={onSubmit}>
+        <input
+          value={recette}
+          onChange={e => setRecette(e.target.value)}
+          name='recette'
+          type='text'
+        ></input>
+        <input type='submit'></input>
+      </form>
+      <MapRecettes api={apiRecette}></MapRecettes>
+    </FormContainer>
   )
 }
 
 const FormContainer = styled.div`
-  margin-top: 10%;
+  margin-top: 10vh;
   padding: 12px;
 `
 
