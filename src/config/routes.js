@@ -1,9 +1,10 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom'
 
 import Home from '../screens/home'
 import Search from '../screens/search'
 import Recette from '../screens/recette'
 import Login from '../screens/login'
+
 
 import GlobalStyle from './globalstyle'
 import Header from '../components/header'
@@ -29,9 +30,9 @@ const Routes = () => {
             <Route path='/search'>
               <Search></Search>
             </Route>
-            <Route path='/recette'>
+            <PrivateRoute path='/recette'>
               <Recette></Recette>
-            </Route>
+            </PrivateRoute>
             <Route path='/login'>
               <Login></Login>
             </Route>
@@ -39,6 +40,28 @@ const Routes = () => {
         </Router>
       </ThemeProvider>
     </div>
+  )
+}
+
+
+function PrivateRoute({ children, ...rest }) {
+  const isToken = localStorage.getItem('token')
+  return (
+    <Route
+      {...rest}
+      render={({ location }) =>
+        isToken ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/login',
+              state: { from: location }
+            }}
+          />
+        )
+      }
+    />
   )
 }
 

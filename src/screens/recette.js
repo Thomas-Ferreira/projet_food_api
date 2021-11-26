@@ -4,7 +4,7 @@ import React from 'react'
 import "./styled.css"
 
 
-const search = () => {
+const Recette = () => {
   return (
     <div>
       <header className='App-header'>
@@ -14,4 +14,4 @@ const search = () => {
   )
 }
 
-export default search
+export default Recette
