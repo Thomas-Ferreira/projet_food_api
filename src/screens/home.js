@@ -32,11 +32,13 @@ const Home = () => {
           </LeftBody>
           <RightBody>
             {apiResponce.map(item => (
-              <div>
+              <a href = {item.spoonacularSourceUrl} target="_blank" rel="noreferrer">
+              <div >
                 <Image src={item.image}></Image>
                 <h2> Recette du jour : </h2>
                 <h3>{item.title}</h3>
               </div>
+              </a>
             ))}
           </RightBody>
         </Body>
