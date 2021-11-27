@@ -1,15 +1,16 @@
 import '../App.css'
 import React from 'react'
 import LoginForm from '../components/loginForm'
-import i18n from 'i18next'
+import i18n from '../config/translation'
+import { useTranslation } from 'react-i18next'
 
-const search = () => {
+const Login = () => {
+  const {t, i18n } = useTranslation()
   return (
     <div>
-      <p>{i18n.t('menu')}</p>
       <LoginForm></LoginForm>
     </div>
   )
 }
 
-export default search
+export default Login

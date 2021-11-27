@@ -1,19 +1,22 @@
 import React from 'react'
 import SideBar from '../sidebar/sidebar'
 import styled from 'styled-components'
+import { i18n } from 'i18next'
+import { useTranslation } from 'react-i18next'
 
-const header = () => {
+const Header = () => {
+  const {t, i18n } = useTranslation()
   return (
     <DivHeader>
       <navBar>
         <SideBar pageWrapId={'page-wrap'} outerContainerId={'App'} />
       </navBar>
-      <StyledH1>Bienvenu à l'Acceuil</StyledH1>
+      <StyledH1>{t('header.head')}</StyledH1>
     </DivHeader>
   )
 }
 
-export default header
+export default Header
 
 const DivHeader = styled.header`
   margin-top: 0;

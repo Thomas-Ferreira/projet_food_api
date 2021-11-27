@@ -2,12 +2,15 @@ import styled from 'styled-components'
 import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import allTheActions from '../../actions'
+import { i18n } from 'i18next'
+import { useTranslation } from 'react-i18next'
 
 const SearchByIngredients = () => {
   const [ingredient, setIngredient] = useState('')
   const [ingredientsList, setIngredientsList] = useState([])
   const [param, setParam] = useState('')
   const dispatch = useDispatch()
+  const {t, i18n } = useTranslation()
 
   const addIngredient = () => {
     setIngredientsList([...ingredientsList, { label: ingredient }])
@@ -43,7 +46,7 @@ const SearchByIngredients = () => {
           value={ingredient}
           onChange={e => setIngredient(e.target.value)}
         ></input>
-        <button onClick={addIngredient}>Ajouter à la liste</button>
+        <button onClick={addIngredient}>{t('searchbying.add')}</button>
         <form onSubmit={onSubmit}>
           <input type='submit'></input>
         </form>
@@ -56,7 +59,7 @@ const SearchByIngredients = () => {
         <div>
           <h2>{item.title}</h2>
           <img src={item.image}></img>
-          <button onClick={item.spoonacularSourceUrl}>Voir la recette</button>
+          <button onClick={item.spoonacularSourceUrl}>{t('searchbying.see')}</button>
         </div>
       ))}
     </div>

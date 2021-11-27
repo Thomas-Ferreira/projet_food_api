@@ -4,6 +4,9 @@ import styled from 'styled-components'
 import './styled.css'
 import { render } from 'react-dom'
 
+import i18n from '../config/translation'
+import { useTranslation } from 'react-i18next'
+
 import allTheActions from '../actions'
 
 const Home = () => {
@@ -18,6 +21,8 @@ const Home = () => {
     console.log({ apiResponce })
   }, [])
 
+  const {t, i18n } = useTranslation()
+
   return (
     <Homemenu>
       <div>
@@ -26,7 +31,7 @@ const Home = () => {
             <TextBody className='text-wrapper'>
             {apiResponce.map(item => (
               <div>
-              <h1>Description Recette</h1>
+              <h1>{t('home.desc')}</h1>
               <div dangerouslySetInnerHTML={{__html: item.summary}} />
               </div>
               ))}
@@ -37,7 +42,7 @@ const Home = () => {
               <a href = {item.spoonacularSourceUrl} target="_blank" rel="noreferrer">
               <div >
                 <Image src={item.image}></Image>
-                <h2> Recette du jour : </h2>
+                <h2>{t('home.rec')}</h2>
                 <h3>{item.title}</h3>
               </div>
               </a>

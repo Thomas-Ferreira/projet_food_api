@@ -5,6 +5,9 @@ import SearchByName from '../components/searchByName'
 import './styled.css'
 import SearchByIngredients from '../components/searchByIngredients'
 import { useState } from 'react'
+import i18n from '../config/translation'
+import { useTranslation } from 'react-i18next'
+
 
 const Search = () => {
   const [isSearch, setSearch] = useState(true)
@@ -18,15 +21,19 @@ const Search = () => {
     console.log(isSearch)
   }
 
+  const {t, i18n } = useTranslation()
+
   return (
     <StyledDiv>
-      <button onClick={isSearchName}>Chercher par Nom</button>
-      <button onClick={isSearchIngredient}>Chercher par Ingredient</button>
+      <button onClick={isSearchName}>{t('search.name')}</button>
+      <button onClick={isSearchIngredient}>{t('search.ingre')}</button>
       {isSearch ? (
         <SearchByName></SearchByName>
       ) : (
         <SearchByIngredients></SearchByIngredients>
       )}
+      <button onClick={() => i18n.changeLanguage('fr')}>FR</button>
+      <button onClick={() => i18n.changeLanguage('en')}>EN</button>
     </StyledDiv>
   )
 }

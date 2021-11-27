@@ -1,0 +1,28 @@
+{
+  "translation":{
+    "search":{
+      "name": "Search by Name",
+      "ingre": "Search by Ingredient"
+    },
+    "home":{
+      "rec": "Receipe of the Day : ",
+      "desc": "Description of the receipe : "
+    },
+    "sidebar":{
+      "home": "Home",
+      "log": "Login",
+      "rec": "Receipe",
+      "search": "Search"
+    },
+    "searchbying":{
+      "add": "Add to the list",
+      "see": "View the receipe"
+    },
+    "maprec":{
+      "button": "View the receipe"
+    },
+    "header":{
+      "head": "Welcome home"
+    }
+}
+}

@@ -1,0 +1,28 @@
+{
+  "translation":{
+    "search":{
+      "name": "Chercher par Nom",
+      "ingre": "Chercher par Ingrédient"
+    },
+    "home":{
+      "rec": "Recette du Jour : ",
+      "desc": "Description de la Recette : "
+    },
+    "sidebar":{
+      "home": "Acceuil",
+      "log": "Connexion",
+      "rec": "Recette",
+      "search": "Recherche"
+    },
+    "searchbying":{
+      "add": "Ajouter à la liste",
+      "see": "Voir la recette"
+    },
+    "maprec":{
+      "button": "Voir la recette"
+    },
+    "header":{
+      "head": "Bienvenue à l'acceuil"
+    }
+}
+}
