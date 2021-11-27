@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import './styled.css'
 import { render } from 'react-dom'
-import { LoremIpsum } from 'react-lorem-ipsum'
 
 import allTheActions from '../actions'
 
