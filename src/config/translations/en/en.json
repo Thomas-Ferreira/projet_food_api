@@ -5,21 +5,21 @@
       "ingre": "Search by Ingredient"
     },
     "home":{
-      "rec": "Receipe of the Day : ",
-      "desc": "Description of the receipe : "
+      "rec": "Recipe of the Day : ",
+      "desc": "Description of the recipe : "
     },
     "sidebar":{
       "home": "Home",
       "log": "Login",
-      "rec": "Receipe",
+      "rec": "Recipe",
       "search": "Search"
     },
     "searchbying":{
       "add": "Add to the list",
-      "see": "View the receipe"
+      "see": "View the recipe"
     },
     "maprec":{
-      "button": "View the receipe"
+      "button": "View the recipe"
     },
     "header":{
       "head": "Welcome home"
