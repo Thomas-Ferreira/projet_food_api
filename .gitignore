@@ -22,7 +22,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 node_modules/.cache/.eslintcache
-
-.vscode
-.prettierrc
-.eslintrc.json
