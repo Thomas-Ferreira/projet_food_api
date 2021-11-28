@@ -1,16 +1,16 @@
 import '../App.css'
 import logo from '../logo.svg'
-import React from 'react'
+import React, { useState } from 'react'
 import "./styled.css"
+import MapRecettes from '../components/mapRecettes'
 
 
 const Recette = () => {
+  const localStorageFavorite = localStorage.getItem("favorites") ? JSON.parse(localStorage.getItem("favorites")) : []
+    const [favorites, setFavorites] = useState(localStorageFavorite)
+    console.log(favorites)
   return (
-    <div>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-      </header>
-    </div>
+    <MapRecettes api={favorites}></MapRecettes>
   )
 }
 
