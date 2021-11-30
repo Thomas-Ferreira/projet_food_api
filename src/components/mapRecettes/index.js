@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import { i18n } from 'i18next'
+import React, { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 

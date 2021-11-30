@@ -37,7 +37,6 @@ const SearchByIngredients = () => {
     dispatch(allTheActions.api.getRecetteByIngredients(param))
     setParam('')
     setIngredientsList([])
-    console.log(apiRecettes)
   }
 
   return (

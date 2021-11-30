@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components'
-import { lightTheme, darkTheme } from './theme'
 
 const GlobalStyle = createGlobalStyle`
 @font-face {

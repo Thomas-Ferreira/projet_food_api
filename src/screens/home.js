@@ -2,9 +2,6 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import './styled.css'
-import { render } from 'react-dom'
-
-import i18n from '../config/translation'
 import { useTranslation } from 'react-i18next'
 
 import allTheActions from '../actions'

@@ -1,5 +1,4 @@
 import '../App.css'
-import logo from '../logo.svg'
 import React, { useState } from 'react'
 import "./styled.css"
 import MapRecettes from '../components/mapRecettes'

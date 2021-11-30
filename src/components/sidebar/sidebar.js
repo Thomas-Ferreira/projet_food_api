@@ -1,8 +1,5 @@
-import {useState} from 'react'
 import { slide as Menu } from 'react-burger-menu'
 import { Link } from 'react-router-dom'
-import {lightTheme, darkTheme} from '../../config/theme'
-import { i18n } from 'i18next'
 import { useTranslation } from 'react-i18next'
 
 export default props => {

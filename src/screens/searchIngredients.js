@@ -1,7 +1,6 @@
 import '../App.css'
 import React from 'react'
 import styled from 'styled-components'
-import SearchByName from '../components/searchByName'
 import './styled.css'
 import SearchByIngredients from '../components/searchByIngredients'
 import { useState } from 'react'

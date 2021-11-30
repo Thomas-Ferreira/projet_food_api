@@ -1,7 +1,6 @@
 import React from 'react'
 import SideBar from '../sidebar/sidebar'
 import styled from 'styled-components'
-import { i18n } from 'i18next'
 import { useTranslation } from 'react-i18next'
 
 const Header = () => {
