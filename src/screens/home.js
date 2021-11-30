@@ -35,7 +35,9 @@ const Home = () => {
               ))}
             </TextBody>
           </LeftBody>
+          <RightBody>
             <MapRecettes api={apiResponce}></MapRecettes>
+          </RightBody>
         </Body>
       </div>
     </Homemenu>
@@ -52,11 +54,6 @@ const Body = styled.div`
   }
 `
 
-const randomDiv = styled.div`
-  @media (min-width: 760px) {
-  display: flex;
-  }
-`
 
 const TextBody = styled.div`
   text-align: left;
@@ -78,4 +75,16 @@ const Homemenu = styled.div`
   background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
+`
+
+const RightBody = styled.div`
+@media (min-width: 760px) {
+  justify-content: flex-end;
+  display: flex;
+  flex: 1;
+  width: 50%;
+  align-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+}
 `

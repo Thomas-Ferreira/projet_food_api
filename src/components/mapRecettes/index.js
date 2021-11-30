@@ -26,18 +26,18 @@ const removeFavorite = (id) =>{
       isFavorite ? removeFavorite(element.id) : addFavorite(element)
   }
   return (
-    <Div2>
+    <RightBody>
       {props.api.map(item => (
-        <RightBody>
+        <div>
           <Lien href = {item.spoonacularSourceUrl} target="_blank" rel="noreferrer">
           <h2>{item.title}</h2>
           <Image src={item.image}></Image>
           </Lien>
           <button onClick={item.spoonacularSourceUrl}>{t('maprec.button')}</button>
           <button onClick={() => HandleFavorite(item)}>{isFavorite ?"remove from favorites" : "add to favorites"}</button>
-          </RightBody>
+          </div>
       ))}
-      </Div2>
+      </RightBody>
   )
 }
 
@@ -62,15 +62,4 @@ const RightBody = styled.div`
   color: #ffffff;
   text-decoration:none;
   margin-bottom: 4vh;
-  @media (min-width: 760px) {
-    width: 50%;
-    align-content: center;
-  }
-`
-const Div2 = styled.div`
-@media (min-width: 760px) {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 `
