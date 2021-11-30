@@ -2,6 +2,7 @@ import '../App.css'
 import React, { useState } from 'react'
 import "./styled.css"
 import MapRecettes from '../components/mapRecettes'
+import { i18n } from 'i18next'
 
 
 const Recette = () => {

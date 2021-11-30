@@ -1,6 +1,7 @@
 import { slide as Menu } from 'react-burger-menu'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { i18n } from 'i18next'
 
 export default props => {
   const {t, i18n } = useTranslation()
