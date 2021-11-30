@@ -14,6 +14,6 @@
   
   -Login: revoie vers notre profils avec nos recettes réalisées
 
-Attention: pour la recherche par ingredient refresh la page si il y a une erreur, d&solé zak j'ai pas réussi a regler le problème mais la recherche marche
+Attention: pour la recherche par ingredient refresh la page si il y a une erreur, désolé zak j'ai pas réussi a regler le problème mais la recherche marche
 
 -améliorer le css
