@@ -11,6 +11,8 @@ import Header from '../components/header'
 import { lightTheme, darkTheme } from './theme'
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
+import SearchIngredient from '../screens/searchIngredients'
+import styled from 'styled-components'
 
 const Routes = () => {
   const [currentTheme, setCurrentTheme] = useState(lightTheme)
@@ -23,12 +25,19 @@ const Routes = () => {
         <GlobalStyle />
         <Router>
           <Header />
+          <Theme>
+          <button onClick={() =>switchTheme(lightTheme)}> light Theme</button>
+          <button onClick={() =>switchTheme(darkTheme)}> dark Theme</button>
+          </Theme>
           <Switch>
             <Route exact path='/'>
               <Home></Home>
             </Route>
             <Route path='/search'>
               <Search></Search>
+            </Route>
+            <Route path='/searchbyingredient'>
+              <SearchIngredient></SearchIngredient>
             </Route>
             <PrivateRoute path='/recette'>
               <Recette></Recette>
@@ -66,3 +75,8 @@ function PrivateRoute({ children, ...rest }) {
 }
 
 export default Routes
+
+
+const Theme = styled.div`
+  padding-top: 10vh;
+`

@@ -8,6 +8,7 @@ import MapRecettes from '../mapRecettes'
 const SearchByName = () => {
   const [recette, setRecette] = useState('')
   const dispatch = useDispatch()
+  const [isFavorite,setIsFavorite]=useState(false)
   const apiRecette = useSelector(state =>
     state.api?.response?.data?.results ? state.api?.response?.data?.results : []
   )
@@ -17,7 +18,6 @@ const SearchByName = () => {
   const onSubmit = e => {
     e.preventDefault()
     dispatch(allTheActions.api.getRecette(recette))
-    console.log({ apiRecette })
   }
 
   return (
@@ -31,7 +31,7 @@ const SearchByName = () => {
         ></input>
         <input type='submit'></input>
       </form>
-      <MapRecettes api={apiRecette}></MapRecettes>
+      <MapRecettes api={apiRecette} token={isFavorite}></MapRecettes>
     </FormContainer>
   )
 }

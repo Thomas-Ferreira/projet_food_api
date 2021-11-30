@@ -10,16 +10,16 @@ import { useHistory } from 'react-router-dom'
 
 
 
-const Search = () => {
+const SearchIngredient = () => {
   const history = useHistory()
   const [isSearch, setSearch] = useState(true)
 
   const isSearchName = () => {
     setSearch(true)
+    history.push('/search')
   }
   const isSearchIngredient = () => {
     setSearch(false)
-    history.push('/searchbyingredient')
   }
 
   const {t, i18n } = useTranslation()
@@ -29,7 +29,7 @@ const Search = () => {
       <button onClick={isSearchName}>{t('search.name')}</button>
       <button onClick={isSearchIngredient}>{t('search.ingre')}</button>
       {isSearch ? (
-        <SearchByName></SearchByName>
+        <SearchByIngredients></SearchByIngredients>
       ) : (
         []
       )}
@@ -43,4 +43,4 @@ const StyledDiv = styled.div`
   text-align: center;
 `
 
-export default Search
+export default SearchIngredient

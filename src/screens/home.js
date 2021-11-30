@@ -8,6 +8,7 @@ import i18n from '../config/translation'
 import { useTranslation } from 'react-i18next'
 
 import allTheActions from '../actions'
+import MapRecettes from '../components/mapRecettes'
 
 const Home = () => {
   const dispatch = useDispatch()
@@ -18,7 +19,6 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(allTheActions.api.getRandom())
-    console.log({ apiResponce })
   }, [])
 
   const {t, i18n } = useTranslation()
@@ -37,17 +37,7 @@ const Home = () => {
               ))}
             </TextBody>
           </LeftBody>
-          <RightBody>
-            {apiResponce.map(item => (
-              <a href = {item.spoonacularSourceUrl} target="_blank" rel="noreferrer">
-              <div >
-                <Image src={item.image}></Image>
-                <h2>{t('home.rec')}</h2>
-                <h3>{item.title}</h3>
-              </div>
-              </a>
-            ))}
-          </RightBody>
+            <MapRecettes api={apiResponce}></MapRecettes>
         </Body>
       </div>
     </Homemenu>
@@ -55,13 +45,6 @@ const Home = () => {
 }
 
 export default Home
-
-const Header = styled.div`
-  text-align: center;
-  @media (min-width: 760px) {
-    display: grid;
-  }
-`
 
 const Body = styled.div`
   padding: 12px;
@@ -73,30 +56,6 @@ const Body = styled.div`
 
 const TextBody = styled.div`
   text-align: left;
-`
-
-const RightBody = styled.div`
-  background-color: #4fc337;
-  border-radius: 30px;
-  text-align: center;
-  color: #ffffff;
-  @media (min-width: 760px) {
-    -webkit-box-pack: end;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    justify-content: center;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    width: 50%;
-    align-content: center;
-    flex-wrap: nowrap;
-    align-items: center;
-  }
 `
 
 const LeftBody = styled.div`
@@ -115,11 +74,4 @@ const Homemenu = styled.div`
   background-color: white;
   background-repeat: no-repeat;
   background-size: cover;
-`
-
-const Image = styled.img`
-  width: 100%;
-  border-radius: 30px;
-  @media (min-width: 760px) {
-  }
 `

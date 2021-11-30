@@ -14,7 +14,6 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(allTheActions.api.getRandom())
-    console.log({ apiResponce })
   }, [])
 
   return (

@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import allTheActions from '../../actions'
 import { i18n } from 'i18next'
 import { useTranslation } from 'react-i18next'
+import MapRecettes from '../mapRecettes'
 
 const SearchByIngredients = () => {
   const [ingredient, setIngredient] = useState('')
@@ -11,6 +12,7 @@ const SearchByIngredients = () => {
   const [param, setParam] = useState('')
   const dispatch = useDispatch()
   const {t, i18n } = useTranslation()
+  const [isFavorite,setIsFavorite]=useState(false)
 
   const addIngredient = () => {
     setIngredientsList([...ingredientsList, { label: ingredient }])
@@ -23,20 +25,19 @@ const SearchByIngredients = () => {
   }
 
   const apiRecettes = useSelector(state =>
-    state.api.response ? state.api.response : []
+    state.api?.response?.data ? state.api?.response?.data : []
   )
-  console.log(apiRecettes)
+
   const apiError = useSelector(state => state.api.error)
-  useEffect(() => {
-    console.log(ingredientsList)
-    dispatch(allTheActions.api.getRecetteByIngredients([]))
-  }, [ingredientsList])
+
+  useEffect(() => {}, [ingredientsList])
 
   const onSubmit = e => {
     e.preventDefault()
     dispatch(allTheActions.api.getRecetteByIngredients(param))
-    console.log({ apiRecettes })
     setParam('')
+    setIngredientsList([])
+    console.log(apiRecettes)
   }
 
   return (
@@ -55,19 +56,15 @@ const SearchByIngredients = () => {
       {ingredientsList.map(ingredient => (
         <li>{ingredient.label}</li>
       ))}
-      {apiRecettes.map(item => (
-        <div>
-          <h2>{item.title}</h2>
-          <img src={item.image}></img>
-          <button onClick={item.spoonacularSourceUrl}>{t('searchbying.see')}</button>
-        </div>
-      ))}
+      <div>
+        <MapRecettes api={apiRecettes} token={isFavorite}></MapRecettes>
+      </div>
     </div>
   )
 }
 
 const FormContainer = styled.div`
-  margin-top: 20vh;
+  margin-top: 10vh;
   padding: 12px;
 `
 

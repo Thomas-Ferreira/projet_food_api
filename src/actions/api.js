@@ -16,7 +16,6 @@ export const getRandom = () => dispatch => {
     }
   })
     .then(response => {
-      console.log(response)
       dispatch({ type: API_SUCCESS, response: response })
     })
     .catch(error => {
@@ -35,7 +34,6 @@ export const getRecette = params => dispatch => {
     }
   })
     .then(response => {
-      console.log(response)
       dispatch({ type: API_SUCCESS, response: response })
     })
     .catch(error => {
@@ -44,7 +42,6 @@ export const getRecette = params => dispatch => {
 }
 
 export const getRecetteByIngredients = params => dispatch => {
-  console.log(params)
   axios({
     method: 'GET',
     url: `https://api.spoonacular.com/recipes/findByIngredients`,
@@ -55,8 +52,7 @@ export const getRecetteByIngredients = params => dispatch => {
     }
   })
     .then(response => {
-      console.log(response)
-      dispatch({ type: API_SUCCESS_SEARCH, response: response })
+      dispatch({ type: API_SUCCESS, response: response })
     })
     .catch(error => {
       dispatch({ type: API_ERROR, error: error })

@@ -23,7 +23,6 @@ const LoginForm = props => {
         password: password
       }
     }).then(response => {
-      console.log(response.headers['x-access-token'])
       localStorage.setItem('token', response.headers['x-access-token'])
       history.push('/recette')
     })
@@ -51,7 +50,7 @@ const LoginForm = props => {
 }
 
 const FormContainer = styled.div`
-  margin-top: 5%;
+  margin-top: 15vh;
   padding: 12px;
 `
 
