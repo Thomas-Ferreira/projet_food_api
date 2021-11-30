@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import './styled.css'
 import { useTranslation } from 'react-i18next'
-import { i18n } from 'i18next'
+import i18n from '../config/translation'
 
 import allTheActions from '../actions'
 import MapRecettes from '../components/mapRecettes'
@@ -49,6 +49,12 @@ const Body = styled.div`
   background: #ffffff;
   @media (min-width: 760px) {
     display: flex;
+  }
+`
+
+const randomDiv = styled.div`
+  @media (min-width: 760px) {
+  display: flex;
   }
 `
 

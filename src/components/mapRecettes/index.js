@@ -26,20 +26,27 @@ const removeFavorite = (id) =>{
       isFavorite ? removeFavorite(element.id) : addFavorite(element)
   }
   return (
-    <RightBody>
+    <Div2>
       {props.api.map(item => (
-        <div>
+        <RightBody>
+          <Lien href = {item.spoonacularSourceUrl} target="_blank" rel="noreferrer">
           <h2>{item.title}</h2>
           <Image src={item.image}></Image>
+          </Lien>
           <button onClick={item.spoonacularSourceUrl}>{t('maprec.button')}</button>
           <button onClick={() => HandleFavorite(item)}>{isFavorite ?"remove from favorites" : "add to favorites"}</button>
-        </div>
+          </RightBody>
       ))}
-    </RightBody>
+      </Div2>
   )
 }
 
 export default MapRecettes
+
+const Lien = styled.a`
+  text-decoration:none;
+  color:#ffffff;
+`
 
 const Image = styled.img`
   width: 80%;
@@ -53,21 +60,17 @@ const RightBody = styled.div`
   border-radius: 30px;
   text-align: center;
   color: #ffffff;
+  text-decoration:none;
+  margin-bottom: 4vh;
   @media (min-width: 760px) {
-    -webkit-box-pack: end;
-    -webkit-justify-content: flex-end;
-    -ms-flex-pack: end;
-    justify-content: center;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
     width: 50%;
     align-content: center;
-    flex-wrap: nowrap;
-    align-items: center;
   }
+`
+const Div2 = styled.div`
+@media (min-width: 760px) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 `

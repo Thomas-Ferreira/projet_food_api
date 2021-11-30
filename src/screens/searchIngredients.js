@@ -6,7 +6,7 @@ import SearchByIngredients from '../components/searchByIngredients'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useHistory } from 'react-router-dom'
-import { i18n } from 'i18next'
+import i18n from '../config/translation'
 
 
 

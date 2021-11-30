@@ -13,6 +13,7 @@ import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import SearchIngredient from '../screens/searchIngredients'
 import styled from 'styled-components'
+import { i18n } from 'i18next'
 
 const Routes = () => {
   const [currentTheme, setCurrentTheme] = useState(lightTheme)

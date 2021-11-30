@@ -2,7 +2,7 @@ import '../App.css'
 import React, { useState } from 'react'
 import "./styled.css"
 import MapRecettes from '../components/mapRecettes'
-import { i18n } from 'i18next'
+import i18n from '../config/translation'
 
 
 const Recette = () => {
